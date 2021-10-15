@@ -21,11 +21,11 @@ def topology_sort():
     while q:
         now = q.popleft()
         result.append(now)        
+
         for i in input[now]:
-            temp = i[1] - 1
-            indegree[temp] -= 1
-            
-            if indegree[temp] == 0:
+            #temp = i[1] - 1
+            indegree[i] -= 1
+            if indegree[i] == 0:
                 q.append(i)
 
     for i in result:
